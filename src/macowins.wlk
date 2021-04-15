@@ -1,7 +1,7 @@
 object macowins {
 	const ventas = []
 
-	method venderPrenda(unaVenta){
+	method realizarVenta(unaVenta){
 		ventas.add(unaVenta)
 	}
 
@@ -32,7 +32,8 @@ class Prendas {
 	var property tipo
 	const cantidad
 
-	method precioPrendas() = cantidad * estadoPrenda.precioModificado(precioBase)
+	method precioPrenda() = estadoPrenda.precioModificado(precioBase)
+	method precioPrendas() = cantidad * self.precioPrenda()
 	method fraccionDePrecio(fraccion) = cantidad * fraccion * precioBase
 }
 
